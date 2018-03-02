@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>OM NOTES</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://hexo.idwuhan.com/"/>
+  <updated>2018-03-02T06:04:18.160Z</updated>
+  <id>http://hexo.idwuhan.com/</id>
+  
+  <author>
+    <name>HARRY</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux权限说明</title>
+    <link href="http://hexo.idwuhan.com/2017/11/12/Linux%E6%9D%83%E9%99%90%E8%AF%B4%E6%98%8E/"/>
+    <id>http://hexo.idwuhan.com/2017/11/12/Linux权限说明/</id>
+    <published>2017-11-12T07:02:00.000Z</published>
+    <updated>2018-03-02T06:04:18.160Z</updated>
+    
+    <content type="html"><![CDATA[<p>大致了解了Linux的使用者与群组之后，接着下来，我们要来谈一谈， 这个文件的权限要如何针对这些所谓的『使用者』与『群组』来设定呢？ 这个部分是相当重要的，尤其对于初学者来说，因为文件的权限与属性是学习Linux的一个相当重要的关卡， 如果没有这部份的概念，那么你将老是听不懂别人在讲什么呢！尤其是当你在你的屏幕前面出现了『Permission deny』的时候，不要担心，『肯定是权限设定错误』啦！呵呵！好了，闲话不多聊，赶快来瞧一瞧先。</p><a id="more"></a><h2 id="基本权限"><a href="#基本权限" class="headerlink" title="基本权限"></a>基本权限</h2><pre><code>a. 读 (r/4)   文件：允许用户打开文件，读取文件内容   目录：允许用户列出目录内容         b. 写 (w/2)   文件：允许用户修改文件内容   目录：允许用户在目录中创建/删除子对象  c. 执行(x/1)   文件：允许用户运行文件   目录：允许用户进入目录  </code></pre><h2 id="特殊权限"><a href="#特殊权限" class="headerlink" title="特殊权限"></a>特殊权限</h2><pre><code>a. suid (u+s/4)   应用于可执行文件，设置使文件在执行过程中具备文件所有者的权限  b. sgid (g+s/2)   应用于目录或可执行文件，应用于目录时，设置目录下所有文件或子目录为目录的所有组，应用于可执行文件时，设置使文件在执行过程中具备文件所有组的权限   c. 粘着位 (o+t/1)  应用于目录，设置目录下所有子目录或文件，只有root和文件所有者能删除</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;大致了解了Linux的使用者与群组之后，接着下来，我们要来谈一谈， 这个文件的权限要如何针对这些所谓的『使用者』与『群组』来设定呢？ 这个部分是相当重要的，尤其对于初学者来说，因为文件的权限与属性是学习Linux的一个相当重要的关卡， 如果没有这部份的概念，那么你将老是听不懂别人在讲什么呢！尤其是当你在你的屏幕前面出现了『Permission deny』的时候，不要担心，『肯定是权限设定错误』啦！呵呵！好了，闲话不多聊，赶快来瞧一瞧先。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://hexo.idwuhan.com/categories/Linux/"/>
+    
+    
+      <category term="权限" scheme="http://hexo.idwuhan.com/tags/%E6%9D%83%E9%99%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Teampass 密码管理系统配置部署</title>
+    <link href="http://hexo.idwuhan.com/2017/11/02/Teampass%20%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE%E9%83%A8%E7%BD%B2/"/>
+    <id>http://hexo.idwuhan.com/2017/11/02/Teampass 密码管理系统配置部署/</id>
+    <published>2017-11-01T22:49:00.000Z</published>
+    <updated>2017-11-09T04:38:14.783Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/pasted-0.png" alt="TEAMPASS"><br>TeamPass是一套密码管理系统，用于团队成员之间共享密码来进行协作管理。并为每个用户定义的访问权限，允许以有组织的方式管理您的密码和相关数据。支持开源协议AGPL3。</p><a id="more"></a><h3 id="1-准备LAMP环境"><a href="#1-准备LAMP环境" class="headerlink" title="1.准备LAMP环境"></a>1.准备LAMP环境</h3><p>   注意：PHP版本大于5.5</p><pre><code>yum info php                    #查看yum仓库PHP版本yum install -y httpd php php-fpm mariadb-server openssl      #安装，默认apache已安装</code></pre><h3 id="2-安装PHP拓展"><a href="#2-安装PHP拓展" class="headerlink" title="2.安装PHP拓展"></a>2.安装PHP拓展</h3><pre><code>php-mcryptphp-mbstringphp-bcmathphp-iconvphp-gdphp-mysqlndphp-xmlphp-ldapmod_ssl</code></pre><h3 id="3-修改PHP参数max-execution-time，默认为30"><a href="#3-修改PHP参数max-execution-time，默认为30" class="headerlink" title="3.修改PHP参数max_execution_time，默认为30"></a>3.修改PHP参数max_execution_time，默认为30</h3><pre><code>php.ini  =&gt;  max_execution_time = 60</code></pre><h3 id="4-配置数据库"><a href="#4-配置数据库" class="headerlink" title="4.配置数据库"></a>4.配置数据库</h3><pre><code>mysql_secure_installation        #初始化mariadb安全配置，设置root密码，删除test库等mysql -uroot -p                        #新建teampass所需的库  &gt;&gt;&gt;create database teampass character set utf8 collate utf8_bin;  &gt;&gt;&gt;grant all privileges on teampass.* to teampass_admin@localhost identified by &apos;PASSWORD&apos;;</code></pre><h3 id="5-配置TeamPass站点文件"><a href="#5-配置TeamPass站点文件" class="headerlink" title="5.配置TeamPass站点文件"></a>5.配置TeamPass站点文件</h3><p>   <a href="https://github.com/nilsteampassnet/TeamPass/tags" target="_blank" rel="external">https://github.com/nilsteampassnet/TeamPass/tags</a></p><pre><code>chown -R apache:apache /opt/teampass/chmod -R 0777 /opt/teampass/includes/configchmod -R 0777 /opt/teampass/includes/avatarschmod -R 0777 /opt/teampass/includes/libraries/csrfp/libschmod -R 0777 /opt/teampass/includes/libraries/csrfp/logchmod -R 0777 /opt/teampass/includes/libraries/csrfp/jschmod -R 0777 /opt/teampass/backupschmod -R 0777 /opt/teampass/fileschmod -R 0777 /opt/teampass/installchmod -R 0777 /opt/teampass/upload</code></pre><h3 id="6-生成站点证书，这里使用Windows-CA"><a href="#6-生成站点证书，这里使用Windows-CA" class="headerlink" title="6.生成站点证书，这里使用Windows CA"></a>6.生成站点证书，这里使用Windows CA</h3><pre><code>openssl genrsa -out /etc/pki/tls/private/teampass.key                #生成证书keyopenssl req -new -key /etc/pki/tls/private/teampass.key -out  /etc/pki/tls/private/teampass.csr -days 730     #通过key生成csr注册信息cat teampass.csr                            #查看生成csr文件，并将内容粘贴到注册CA申请过程mv /etc/pki/tls/private/certnew.cer /etc/pki/tls/private/teampass.cer             #下载申请的证书，证书为cer格式，将cer格式转换为pem格式openssl x509 -inform der -in /etc/pki/tls/private/teampass.cer -out /etc/pki/tls/private/teampass.pem</code></pre><h3 id="7-配置Apache"><a href="#7-配置Apache" class="headerlink" title="7.配置Apache"></a>7.配置Apache</h3><pre><code>DocumentRoot &quot;/opt/teampass&quot;&lt;Directory &quot;/opt/teampass&quot;&gt;  SetOutputFilter DEFLATE  Options FollowSymLinks  AllowOverride All  Require all granted  DirectoryIndex index.php index.html index.htm default.php default.html default.htm&lt;/Directory&gt;SSLEngine OnSSLCertificateFile /opt/teampass/ssl/teampass.pemSSLCertificateKeyFile /opt/teampass/ssl/teampass.keySSLCipherSuite EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDHSSLProtocol All -SSLv2 -SSLv3SSLHonorCipherOrder On</code></pre><h3 id="8-设置服务自动启动"><a href="#8-设置服务自动启动" class="headerlink" title="8.设置服务自动启动"></a>8.设置服务自动启动</h3><pre><code>systemctl enable mariadb-serversystemctl enable php-fpmsystemctl enable httpd</code></pre><h3 id="9-访问WEB安装"><a href="#9-访问WEB安装" class="headerlink" title="9.访问WEB安装"></a>9.访问WEB安装</h3><pre><code>https://$IP_ADDRESS</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/pasted-0.png&quot; alt=&quot;TEAMPASS&quot;&gt;&lt;br&gt;TeamPass是一套密码管理系统，用于团队成员之间共享密码来进行协作管理。并为每个用户定义的访问权限，允许以有组织的方式管理您的密码和相关数据。支持开源协议AGPL3。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="OPEN SOURCE" scheme="http://hexo.idwuhan.com/categories/OPEN-SOURCE/"/>
+    
+    
+      <category term="TEAMPASS" scheme="http://hexo.idwuhan.com/tags/TEAMPASS/"/>
+    
+  </entry>
+  
+</feed>
