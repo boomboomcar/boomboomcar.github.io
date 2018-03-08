@@ -3,23 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>关于我 | 我自己的运维笔记</title>
+  <title>linux权限说明 | 我自己的运维笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="keywords" content="权限" />
   
   
   
-  <meta name="description" content="这是一个介绍页但是具体的介绍内容我还没想好等我想好了就会重新编辑了谢谢">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于我">
-<meta property="og:url" content="http://hexo.idwuhan.com/about/index.html">
+  
+  <meta name="description" content="大致了解了Linux的使用者与群组之后，接着下来，我们要来谈一谈， 这个文件的权限要如何针对这些所谓的『使用者』与『群组』来设定呢？ 这个部分是相当重要的，尤其对于初学者来说，因为文件的权限与属性是学习Linux的一个相当重要的关卡， 如果没有这部份的概念，那么你将老是听不懂别人在讲什么呢！尤其是当你在你的屏幕前面出现了『Permission deny』的时候，不要担心，『肯定是权限设定错误』啦！">
+<meta name="keywords" content="权限">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux权限说明">
+<meta property="og:url" content="http://hexo.idwuhan.com/2017/11/12/Linux权限说明.php">
 <meta property="og:site_name" content="我自己的运维笔记">
-<meta property="og:description" content="这是一个介绍页但是具体的介绍内容我还没想好等我想好了就会重新编辑了谢谢">
+<meta property="og:description" content="大致了解了Linux的使用者与群组之后，接着下来，我们要来谈一谈， 这个文件的权限要如何针对这些所谓的『使用者』与『群组』来设定呢？ 这个部分是相当重要的，尤其对于初学者来说，因为文件的权限与属性是学习Linux的一个相当重要的关卡， 如果没有这部份的概念，那么你将老是听不懂别人在讲什么呢！尤其是当你在你的屏幕前面出现了『Permission deny』的时候，不要担心，『肯定是权限设定错误』啦！">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-08T07:04:02.454Z">
+<meta property="og:updated_time" content="2018-03-02T06:04:18.160Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于我">
-<meta name="twitter:description" content="这是一个介绍页但是具体的介绍内容我还没想好等我想好了就会重新编辑了谢谢">
+<meta name="twitter:title" content="Linux权限说明">
+<meta name="twitter:description" content="大致了解了Linux的使用者与群组之后，接着下来，我们要来谈一谈， 这个文件的权限要如何针对这些所谓的『使用者』与『群组』来设定呢？ 这个部分是相当重要的，尤其对于初学者来说，因为文件的权限与属性是学习Linux的一个相当重要的关卡， 如果没有这部份的概念，那么你将老是听不懂别人在讲什么呢！尤其是当你在你的屏幕前面出现了『Permission deny』的时候，不要担心，『肯定是权限设定错误』啦！">
   
   <link rel="icon" href="/css/images/favicon.ico">
   
@@ -67,7 +70,7 @@ var themeMenus = {};
 </script>
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
 
   <header id="allheader" class="site-header" role="banner">
@@ -120,7 +123,7 @@ var themeMenus = {};
             
       <div id="content" class="outer">
         
-          <section id="main"><article id="about-"  class="article article-type-about" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-Linux权限说明" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -128,7 +131,7 @@ var themeMenus = {};
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      关于我
+      Linux权限说明
     </h1>
   
 
@@ -136,6 +139,10 @@ var themeMenus = {};
     
     <div class="article-meta">
       
+	Posted on <a href="/2017/11/12/Linux权限说明.php" class="article-date">
+	  <time datetime="2017-11-12T07:02:00.000Z" itemprop="datePublished">十一月 12, 2017</time>
+	</a>
+
       
 	<span id="busuanzi_container_page_pv">
 	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
@@ -144,13 +151,35 @@ var themeMenus = {};
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><b>这是一个介绍页<br><b>但是具体的介绍内容我还没想好<br>等我想好了就会重新编辑了<br>谢谢</b></b></p>
-
+        <p>大致了解了Linux的使用者与群组之后，接着下来，我们要来谈一谈， 这个文件的权限要如何针对这些所谓的『使用者』与『群组』来设定呢？ 这个部分是相当重要的，尤其对于初学者来说，因为文件的权限与属性是学习Linux的一个相当重要的关卡， 如果没有这部份的概念，那么你将老是听不懂别人在讲什么呢！尤其是当你在你的屏幕前面出现了『Permission deny』的时候，不要担心，『肯定是权限设定错误』啦！呵呵！好了，闲话不多聊，赶快来瞧一瞧先。</p>
+<a id="more"></a>
+<h2 id="基本权限"><a href="#基本权限" class="headerlink" title="基本权限"></a>基本权限</h2><pre><code>a. 读 (r/4)  
+ 文件：允许用户打开文件，读取文件内容  
+ 目录：允许用户列出目录内容         
+b. 写 (w/2)  
+ 文件：允许用户修改文件内容  
+ 目录：允许用户在目录中创建/删除子对象  
+c. 执行(x/1)  
+ 文件：允许用户运行文件  
+ 目录：允许用户进入目录  
+</code></pre><h2 id="特殊权限"><a href="#特殊权限" class="headerlink" title="特殊权限"></a>特殊权限</h2><pre><code>a. suid (u+s/4)  
+ 应用于可执行文件，设置使文件在执行过程中具备文件所有者的权限  
+b. sgid (g+s/2)  
+ 应用于目录或可执行文件，应用于目录时，设置目录下所有文件或子目录为目录的所有组，应用于可执行文件时，设置使文件在执行过程中具备文件所有组的权限   
+c. 粘着位 (o+t/1)  
+应用于目录，设置目录下所有子目录或文件，只有root和文件所有者能删除
+</code></pre>
       
     </div>
     <footer class="entry-meta entry-footer">
       
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+
       
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/权限/">权限</a></li></ul>
+
       
         <div id="donation_div"></div>
 
@@ -167,194 +196,59 @@ var a = new Donate({
       
             
       
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8zMTc2Ni84MzMw">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+      
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/2017/11/02/Teampass 密码管理系统配置部署.php" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Teampass 密码管理系统配置部署</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
 <!-- Table of Contents -->
 
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本权限"><span class="nav-number">1.</span> <span class="nav-text">基本权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊权限"><span class="nav-number">2.</span> <span class="nav-text">特殊权限</span></a></li></ol>
+    
+    </div>
+  </aside>
+
 </section>
-          <aside id="sidebar">
-  
-    <div class="widget-wrap" style="margin: 20px 0;">
-	<div id="search-form-wrap">
-
-    <form class="search-form">
-        <label style="width: 75%;">
-            <span class="screen-reader-text">Search for:</span>
-            <input type="search" class="search-field" style="height: 42px;" placeholder=" 搜索…" value="" name="s" title="Search for:">
-        </label>
-        <input type="submit" class="search-form-submit" value="搜索">
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(无标题)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
-
-</div>
-</div>
-  
-    
-  <div class="widget_athemes_tabs">
-    <ul id="widget-tab" class="clearfix widget-tab-nav">
-      <li class="active"><a>最新文章</a></li>
-    </ul>
-    <div class="widget">
-      <ul>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/11/12/Linux权限说明.php">Linux权限说明</a></h6>
-              <span>十一月 12, 2017</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/11/02/Teampass 密码管理系统配置部署.php">Teampass 密码管理系统配置部署</a></h6>
-              <span>十一月 2, 2017</span>
-            </div>
-
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OPEN-SOURCE/">OPEN SOURCE</a><span class="category-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/TEAMPASS/">TEAMPASS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/权限/">权限</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/TEAMPASS/" style="font-size: 10px;">TEAMPASS</a> <a href="/tags/权限/" style="font-size: 10px;">权限</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">2</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">联系我</h3>
-    <div class="widget widget_athemes_social_icons">
-
-    	<ul class="clearfix widget-social-icons">   
-    	
-          
-     			  <li><a href="https://github.com/ask6412" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a></li> 
-          
-   		
-          
-     			  <li><a href="https://weibo.com/u/2658388273" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a></li> 
-          
-   		
-          
-            <li><a href="mailto:290415342@qq.com?subject=请联系我&body=我能帮你什么" title="email"><i class="fa fa-envelope" aria-hidden="true"></i></a></li> 
-          
-   		
-          
-     			  <li><a href="290415342" title="QQ"><i class="fa fa-qq" aria-hidden="true"></i></a></li> 
-          
-   		
-   		</ul>
-
-
-   		<!--
-   		<ul class="clearfix widget-social-icons">   		
-   		<li class="widget-si-twitter"><a href="http://twitter.com" title="Twitter"><i class="ico-twitter"></i></a></li> 
-		<li class="widget-si-facebook"><a href="http://facebook.com" title="Facebook"><i class="ico-facebook"></i></a></li>
-			<li class="widget-si-gplus"><a href="http://plus.google.com" title="Google+"><i class="ico-gplus"></i></a></li>
-			<li class="widget-si-pinterest"><a href="http://pinterest.com" title="Pinterest"><i class="ico-pinterest"></i></a></li>
-			<li class="widget-si-flickr"><a href="http://flickr.com" title="Flickr"><i class="ico-flickr"></i></a></li>
-			<li class="widget-si-instagram"><a href="http://instagram.com" title="Instagram"><i class="ico-instagram"></i></a></li>
-		</ul> -->
-
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget tag">
-    <h3 class="widget-title">友情链接</h3>
-      <ul class="entry">
-        
-          <li class='link'><a href='https://hexo.io/zh-cn/index.html'>HEXO</a></li>
-        
-          <li class='link'><a href='https://github.com/iTimeTraveler/hexo-theme-hiero'>主题</a></li>
-        
-      </ul>
-  </div>
-
-
-  
-</aside>
         
       </div>
       <footer id="footer" class="site-footer">
